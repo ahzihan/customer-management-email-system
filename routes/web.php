@@ -19,6 +19,9 @@ Route::post('/send-otp', [UserController::class, 'SendOTPCode']);
 Route::post('/verify-otp', [UserController::class, 'VerifyOTP']);
 Route::post('/reset-password', [UserController::class, 'ResetPassword'])->middleware([TokenVerificationMiddleware::class]);
 
+Route::post('/send-message', [CustomerController::class, 'SendMessage']);
+
+
 //After Authentication
 Route::get('/user-details', [UserController::class, 'UserProfile'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/user-update', [UserController::class, 'UserUpdate'])->middleware([TokenVerificationMiddleware::class]);
@@ -36,6 +39,7 @@ Route::get('/resetPassword', [UserController::class, 'ResetPasswordPage'])->midd
 Route::get('/userProfile', [UserController::class, 'ProfilePage'])->middleware([TokenVerificationMiddleware::class]);
 
 Route::get('/customerPage', [CustomerController::class, 'CustomerPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/messagePage', [CustomerController::class, 'MessagePage'])->middleware([TokenVerificationMiddleware::class]);
 
 //Customer Api
 Route::get('/list-customer', [CustomerController::class, 'CustomerList'])->middleware([TokenVerificationMiddleware::class]);

@@ -75,6 +75,11 @@
         <span class="side-bar-item-caption">Customer</span>
     </a>
 
+    <a href="{{url("/messagePage")}}" class="side-bar-item">
+        <i class="fa fa-chevron-circle-right text-dark"></i>
+        <span class="side-bar-item-caption">Send Email</span>
+    </a>
+
 </div>
 
 
